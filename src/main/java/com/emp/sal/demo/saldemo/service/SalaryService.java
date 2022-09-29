@@ -26,12 +26,12 @@ public class SalaryService {
 
     public List<Employee> getEmployeesByMonth(String month) {
         logger.info(">>>>>>>>>>> Start getting employees by month >>>>>>>>>>>>>>>");
-        boolean isPresent = Arrays.stream(MONTHS).anyMatch(month::equals);
+        boolean isPresent = Arrays.stream(MONTHS).anyMatch(month.toLowerCase()::equals);
         if (!isPresent) {
             logger.info("invalid month" + month);
             throw new InvalidMonthException("invalid month " + month);
         }
-        List<Employee> employeeList = employeeRepository.getEmployeeByMonth(month);
+        List<Employee> employeeList = employeeRepository.getEmployeeByMonth(month.toLowerCase());
         System.out.println(employeeList);
         if (employeeList == null || employeeList.isEmpty()) {
             logger.info("data not  found" + month);
@@ -51,7 +51,7 @@ public class SalaryService {
         return reportList;
     }
 
-    public List<Employee> loadAllEmployees() {
+    public String loadAllEmployees() {
         logger.info(">>>>>>>>>>> Start loading csv data  >>>>>>>>>>>>>>>");
         List<Employee> employeeList = null;
 
@@ -63,6 +63,6 @@ public class SalaryService {
         }
 
         logger.info(">>>>>>>>>>> End of loading csv data  >>>>>>>>>>>>>>>");
-        return employeeList;
+        return "files have been loaded";
     }
 }

@@ -21,5 +21,5 @@ POST http://localhost:8080/load
 GET http://localhost:8080/employees/{month}
 
 ## List all months with total salary
-GET http://localhost:8080/employees/{month}
+GET http://localhost:8080/report
 

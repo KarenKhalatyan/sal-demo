@@ -36,7 +36,7 @@ public class SalaryController {
 
     @PostMapping("/load")
     @ApiOperation("load files into database")
-    public List<Employee> loadEmployees() {
+    public String loadEmployees() {
         return salaryService.loadAllEmployees();
     }
 }
