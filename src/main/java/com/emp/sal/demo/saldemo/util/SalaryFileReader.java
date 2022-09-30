@@ -17,10 +17,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class SalaryFileReader {
-    static Logger logger = LoggerFactory.getLogger(SalaryFileReader.class);
     private static final String delimiter = "--";
     private static final String[] MONTHS = {"january", "february", "march", "april", "may", "june", "jule", "august", "september", "november", "december"};
-
+    static Logger logger = LoggerFactory.getLogger(SalaryFileReader.class);
 
     public static List<Employee> loadData() {
         File file = new File("./csv");

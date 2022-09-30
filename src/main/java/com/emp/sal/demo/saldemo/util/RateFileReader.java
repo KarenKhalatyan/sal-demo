@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 public class RateFileReader {
-    private static final String path="./csv";
+    private static final String path = "./csv";
+
     public static BigDecimal getRateInGel() {
         BigDecimal result = BigDecimal.ONE;
         File dir = new File(path);
@@ -28,7 +29,7 @@ public class RateFileReader {
         } catch (FileNotFoundException e) {
             throw new FileException("no file found in /csv/ dir with name *Exchange*.csv");
         } catch (IOException e) {
-            throw new FileException("error during file reading process"+e.getMessage());
+            throw new FileException("error during file reading process" + e.getMessage());
         }
         return result;
 

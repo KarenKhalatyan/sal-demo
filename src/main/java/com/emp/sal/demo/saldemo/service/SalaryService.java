@@ -15,10 +15,9 @@ import java.util.List;
 
 @Service
 public class SalaryService {
-    Logger logger = LoggerFactory.getLogger(SalaryService.class);
     private static final String[] MONTHS = {"january", "february", "march", "april", "may", "june", "jule", "august", "september", "november", "december"};
-
     final EmployeeRepository employeeRepository;
+    Logger logger = LoggerFactory.getLogger(SalaryService.class);
 
     public SalaryService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;

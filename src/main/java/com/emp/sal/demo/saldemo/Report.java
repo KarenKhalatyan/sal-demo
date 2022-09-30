@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Report {
     private String month;
-    private BigDecimal sum=BigDecimal.ZERO;
+    private BigDecimal sum = BigDecimal.ZERO;
 
     public Report() {
     }

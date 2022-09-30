@@ -22,7 +22,7 @@ public class SalaryController {
     }
 
     @GetMapping("/employees/{month}")
-    @ApiOperation("get persons salary by  month "+"[january,february,march,april,may,june, jule,august,september,november,december]")
+    @ApiOperation("get persons salary by  month " + "[january,february,march,april,may,june, jule,august,september,november,december]")
     public List<Employee> getAllEmployees(@PathVariable String month) {
         List<Employee> employeeList = salaryService.getEmployeesByMonth(month);
         return employeeList;
@@ -31,7 +31,7 @@ public class SalaryController {
     @GetMapping("/report")
     @ApiOperation("Summary report ")
     public List<Report> getReport() {
-       return salaryService.getAll();
+        return salaryService.getAll();
     }
 
     @PostMapping("/load")
